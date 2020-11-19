@@ -29,3 +29,5 @@ C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Lab2BD1.exe
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Lab2BD1.pdb
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.EditForm.resources
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Form2.resources
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Filtration_Drivers.resources

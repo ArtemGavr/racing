@@ -61,30 +61,29 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.kursWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kursWorkDataSet = new Lab2BD1.KursWorkDataSet();
+            this.labelName = new System.Windows.Forms.Label();
             this.autosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autosTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.AutosTableAdapter();
             this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.heapsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.startsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kursWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursWorkDataSet = new Lab2BD1.KursWorkDataSet();
+            this.autosTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.AutosTableAdapter();
             this.classesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.ClassesTableAdapter();
             this.driversTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.DriversTableAdapter();
             this.heapsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.HeapsTableAdapter();
             this.racesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RacesTableAdapter();
             this.roadsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RoadsTableAdapter();
-            this.startsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.startsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.StartsTableAdapter();
             this.tableAdapterManager = new Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
@@ -92,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -218,7 +219,7 @@
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(34, 26);
-            this.toolStripButtonSave.Text = "toolStripButtonSave";
+            this.toolStripButtonSave.Text = "Сохранить";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // dataGridView1
@@ -240,11 +241,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
             this.toolStripMenuItem7,
-            this.editFormToolStripMenuItem});
+            this.editFormToolStripMenuItem,
+            this.filterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(889, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 33);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -374,34 +376,20 @@
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "----";
-            // 
-            // kursWorkBindingSource
-            // 
-            this.kursWorkBindingSource.DataSource = this.kursWorkDataSet;
-            this.kursWorkBindingSource.Position = 0;
-            // 
-            // kursWorkDataSet
-            // 
-            this.kursWorkDataSet.DataSetName = "KursWorkDataSet";
-            this.kursWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelName.Location = new System.Drawing.Point(12, 48);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(38, 24);
+            this.labelName.TabIndex = 3;
+            this.labelName.Text = "----";
             // 
             // autosBindingSource
             // 
             this.autosBindingSource.DataMember = "Autos";
             this.autosBindingSource.DataSource = this.kursWorkBindingSource;
-            // 
-            // autosTableAdapter
-            // 
-            this.autosTableAdapter.ClearBeforeFill = true;
             // 
             // classesBindingSource
             // 
@@ -428,6 +416,32 @@
             this.roadsBindingSource.DataMember = "Roads";
             this.roadsBindingSource.DataSource = this.kursWorkBindingSource;
             // 
+            // startsBindingSource
+            // 
+            this.startsBindingSource.DataMember = "Starts";
+            this.startsBindingSource.DataSource = this.kursWorkBindingSource;
+            // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(66, 29);
+            this.filterToolStripMenuItem.Text = "Filter";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
+            // 
+            // kursWorkBindingSource
+            // 
+            this.kursWorkBindingSource.DataSource = this.kursWorkDataSet;
+            this.kursWorkBindingSource.Position = 0;
+            // 
+            // kursWorkDataSet
+            // 
+            this.kursWorkDataSet.DataSetName = "KursWorkDataSet";
+            this.kursWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autosTableAdapter
+            // 
+            this.autosTableAdapter.ClearBeforeFill = true;
+            // 
             // classesTableAdapter
             // 
             this.classesTableAdapter.ClearBeforeFill = true;
@@ -447,11 +461,6 @@
             // roadsTableAdapter
             // 
             this.roadsTableAdapter.ClearBeforeFill = true;
-            // 
-            // startsBindingSource
-            // 
-            this.startsBindingSource.DataMember = "Starts";
-            this.startsBindingSource.DataSource = this.kursWorkBindingSource;
             // 
             // startsTableAdapter
             // 
@@ -473,8 +482,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 557);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(965, 557);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.menuStrip1);
@@ -490,8 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
@@ -499,6 +506,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,7 +532,7 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDrivers;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRoads;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHeaps;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label labelName;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemChangingHeap;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -554,6 +563,7 @@
         private System.Windows.Forms.ToolStripMenuItem racesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startsToolStripMenuItem;
         private KursWorkDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
     }
 }
 

@@ -67,6 +67,18 @@
     <Compile Include="EditForm.Designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filtration_Autos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtration_Autos.Designer.cs">
+      <DependentUpon>Filtration_Autos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filtration_Drivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtration_Drivers.Designer.cs">
+      <DependentUpon>Filtration_Drivers.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeapForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     </Compile>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtration_Autos.resx">
+      <DependentUpon>Filtration_Autos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtration_Drivers.resx">
+      <DependentUpon>Filtration_Drivers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeapForm.resx">
       <DependentUpon>HeapForm.cs</DependentUpon>

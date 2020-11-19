@@ -15,7 +15,7 @@ namespace Lab2BD1
         public Form1()
         {
             InitializeComponent();
-            label1.Text = "Choose a base in the menu...";
+            labelName.Text = "Choose a base in the menu...";
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -60,7 +60,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = false;
             bindingNavigator1.BindingSource = driversBindingSource;
             dataGridView1.DataSource = driversBindingSource;
-            label1.Text = "Drivers";
+            labelName.Text = "Drivers";
         }
 
         private void toolStripMenuItemRoads_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = false;
             bindingNavigator1.BindingSource = roadsBindingSource;
             dataGridView1.DataSource = roadsBindingSource;
-            label1.Text = "Roads";
+            labelName.Text = "Roads";
         }
 
         private void toolStripMenuItemHeaps_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = heapsBindingSource;
             dataGridView1.DataSource = heapsBindingSource;
-            label1.Text = "Heaps";
+            labelName.Text = "Heaps";
         }
 
         private void roadBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = roadsBindingSource;
             dataGridView1.DataSource = roadsBindingSource;
-            label1.Text = "Roads";
+            labelName.Text = "Roads";
         }
 
         private void autosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = autosBindingSource;
             dataGridView1.DataSource = autosBindingSource;
-            label1.Text = "Autos";
+            labelName.Text = "Autos";
         }
 
         private void classesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = classesBindingSource;
             dataGridView1.DataSource = classesBindingSource;
-            label1.Text = "Classes";
+            labelName.Text = "Classes";
         }
 
         private void racesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = racesBindingSource;
             dataGridView1.DataSource = racesBindingSource;
-            label1.Text = "Races";
+            labelName.Text = "Races";
         }
 
         private void startsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Lab2BD1
             editFormToolStripMenuItem.Visible = true;
             bindingNavigator1.BindingSource = startsBindingSource;
             dataGridView1.DataSource = startsBindingSource;
-            label1.Text = "Starts";
+            labelName.Text = "Starts";
         }
     
     private void toolStripMenuItemChangingHeap_Click(object sender, EventArgs e)
@@ -180,21 +180,20 @@ namespace Lab2BD1
             }
             if (!edit) return;
             var st = new KursWorkDataSet.HeapsDataTable();
-            //heapsTableAdapter.fill
-            //heapsTableAdapter.FillBy(st,
-            //Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+            heapsTableAdapter.FillByID(st,
+            Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
 
-            //object[] row = st.Rows[0].ItemArray;
+            object[] row = st.Rows[0].ItemArray;
 
-            //var edt = new EditForm(
-            //Convert.ToInt32(row[0]),
-            //Convert.ToInt32(row[2]),
-            //Convert.ToInt32(row[3]),
-            //Convert.ToDateTime(row[1])
-            //);
-            //edt.ShowDialog();
-            //heapTableAdapter.Fill(racingDataSet.Heap);
-            //racingDataSet.AcceptChanges();
+            var edt = new EditForm(
+            Convert.ToInt32(row[0]),
+            Convert.ToInt32(row[2]),
+            Convert.ToInt32(row[3]),
+            Convert.ToDateTime(row[1])
+            );
+            edt.ShowDialog();
+            heapsTableAdapter.Fill(kursWorkDataSet.Heaps);
+            kursWorkDataSet.AcceptChanges();
         }
 
 
@@ -218,5 +217,36 @@ namespace Lab2BD1
             }
         }
 
+        public static int age_from = 0;
+        public static int age_to = 0;
+        private void filterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (labelName.Text == "Drivers")
+            {
+                var edt = new Filtration_Drivers();
+         
+                edt.ShowDialog();
+
+                try
+                {
+                    
+                    if (age_from > age_to || age_to < 0 || age_from < 0)
+                    {
+                        MessageBox.Show("Incorrect values for filtering");
+                        return;
+                    }
+                    var st = new KursWorkDataSet.DriversDataTable();
+                    
+                    driversTableAdapter.FilterByAge(st, age_from, age_to);
+                    dataGridView1.DataSource = st;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+                return;
+            }
+        }
     }
 }
