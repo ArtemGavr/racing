@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassType.Designer.cs">
+      <DependentUpon>ClassType.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KursWorkDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Month.Designer.cs">
+      <DependentUpon>Month.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueryEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,9 @@
       <DependentUpon>RacingDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <EmbeddedResource Include="ClassType.resx">
+      <DependentUpon>ClassType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeapForm.resx">
       <DependentUpon>HeapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month.resx">
+      <DependentUpon>Month.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QueryEdit.resx">
       <DependentUpon>QueryEdit.cs</DependentUpon>

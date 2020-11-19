@@ -80,6 +80,11 @@
             this.roadsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RoadsTableAdapter();
             this.startsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.StartsTableAdapter();
             this.tableAdapterManager = new Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager();
+            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numberOfHeapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.averageRideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ridesForDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.racesNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -138,7 +143,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 26);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 33);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -148,7 +153,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
@@ -157,7 +162,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -166,13 +171,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -187,7 +192,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -195,7 +200,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -204,13 +209,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
             // 
             // toolStripButtonSave
             // 
@@ -218,7 +223,7 @@
             this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 26);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 33);
             this.toolStripButtonSave.Text = "Сохранить";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
@@ -242,7 +247,8 @@
             this.toolStripMenuItem3,
             this.toolStripMenuItem7,
             this.editFormToolStripMenuItem,
-            this.filterToolStripMenuItem});
+            this.filterToolStripMenuItem,
+            this.statisticsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -478,6 +484,45 @@
             this.tableAdapterManager.StartsTableAdapter = this.startsTableAdapter;
             this.tableAdapterManager.UpdateOrder = Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.numberOfHeapsToolStripMenuItem,
+            this.averageRideToolStripMenuItem,
+            this.ridesForDriversToolStripMenuItem,
+            this.racesNumberToolStripMenuItem});
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
+            // 
+            // numberOfHeapsToolStripMenuItem
+            // 
+            this.numberOfHeapsToolStripMenuItem.Name = "numberOfHeapsToolStripMenuItem";
+            this.numberOfHeapsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.numberOfHeapsToolStripMenuItem.Text = "Number of heaps";
+            this.numberOfHeapsToolStripMenuItem.Click += new System.EventHandler(this.numberOfHeapsToolStripMenuItem_Click);
+            // 
+            // averageRideToolStripMenuItem
+            // 
+            this.averageRideToolStripMenuItem.Name = "averageRideToolStripMenuItem";
+            this.averageRideToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.averageRideToolStripMenuItem.Text = "Average ride";
+            this.averageRideToolStripMenuItem.Click += new System.EventHandler(this.averageRideToolStripMenuItem_Click);
+            // 
+            // ridesForDriversToolStripMenuItem
+            // 
+            this.ridesForDriversToolStripMenuItem.Name = "ridesForDriversToolStripMenuItem";
+            this.ridesForDriversToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ridesForDriversToolStripMenuItem.Text = "Rides for drivers";
+            this.ridesForDriversToolStripMenuItem.Click += new System.EventHandler(this.ridesForDriversToolStripMenuItem_Click);
+            // 
+            // racesNumberToolStripMenuItem
+            // 
+            this.racesNumberToolStripMenuItem.Name = "racesNumberToolStripMenuItem";
+            this.racesNumberToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.racesNumberToolStripMenuItem.Text = "Races number";
+            this.racesNumberToolStripMenuItem.Click += new System.EventHandler(this.racesNumberToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -564,6 +609,11 @@
         private System.Windows.Forms.ToolStripMenuItem startsToolStripMenuItem;
         private KursWorkDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem numberOfHeapsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem averageRideToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ridesForDriversToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem racesNumberToolStripMenuItem;
     }
 }
 

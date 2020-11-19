@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace Lab2BD1
 {
@@ -224,19 +226,19 @@ namespace Lab2BD1
             if (labelName.Text == "Drivers")
             {
                 var edt = new Filtration_Drivers();
-         
+
                 edt.ShowDialog();
 
                 try
                 {
-                    
+
                     if (age_from > age_to || age_to < 0 || age_from < 0)
                     {
                         MessageBox.Show("Incorrect values for filtering");
                         return;
                     }
                     var st = new KursWorkDataSet.DriversDataTable();
-                    
+
                     driversTableAdapter.FilterByAge(st, age_from, age_to);
                     dataGridView1.DataSource = st;
 
@@ -247,6 +249,95 @@ namespace Lab2BD1
                 }
                 return;
             }
+        }
+
+        public static int class_id = 0;
+        private void numberOfHeapsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var edt = new ClassType();
+            edt.ShowDialog();
+
+            try
+            {
+                if (class_id < 0)
+                {
+                    MessageBox.Show("Incorrect values for class");
+                    return;
+                }
+                MessageBox.Show("There were " +
+                    heapsTableAdapter.NumberOfHeaps(class_id) +
+                    " heaps", "Number of heaps with class " + class_id, MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+            return;
+        }
+
+        private void averageRideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                MessageBox.Show("The average ride time is  " 
+                    + startsTableAdapter.AverageRideTime()
+                    + " sec", "Average ride time" + class_id,
+                    MessageBoxButtons.OK);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+            return;
+        }
+        const string ConnectionString = "Data Source=ARTEMSNOTEBOOK;Initial Catalog=KursWork;Integrated Security=True";
+        private void ridesForDriversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+      
+            try
+                {
+
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                SqlDataAdapter oda = new SqlDataAdapter(
+                    @"SELECT  drivers.Name, drivers.Lastname, Count(DISTINCT heaps.race_id) AS number_of_races
+                    FROM dbo.Drivers
+                    inner join starts on starts.driver_id = drivers.driver_id
+                    inner join heaps on starts.heap_id = heaps.heap_id
+                    Group by drivers.driver_id, drivers.Name, drivers.Lastname", sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                sqlconn.Close();
+            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
+                return;
+            
+        }
+
+        public static string month;
+        private void racesNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var edt = new Month();
+            edt.ShowDialog();
+
+            try
+            {
+                int month_n = DateTime.ParseExact(month, "MMMM", new System.Globalization.CultureInfo("en-US")).Month;
+                MessageBox.Show("There were " +
+                   racesTableAdapter.RacesInMonth(month_n) +
+                    " races in " + month, "Number of races in " + month, MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+            return;
         }
     }
 }

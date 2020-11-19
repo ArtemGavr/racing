@@ -13,7 +13,7 @@ namespace Lab2BD1
 {
     public partial class QueryEdit : Form
     {
-        const string ConnectionString = @"Data Source=ArtemsNotebook;Initial Catalog = Racing; Integrated Security = True";
+        const string ConnectionString = @"Data Source=ARTEMSNOTEBOOK;Initial Catalog=KursWork;Integrated Security=True";
         public QueryEdit()
         {
             InitializeComponent();
