@@ -85,6 +85,14 @@
             this.averageRideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ridesForDriversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.racesNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passForHeapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.racesResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.SearchtextBox = new System.Windows.Forms.TextBox();
+            this.comboBoxDrivers = new System.Windows.Forms.ComboBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.comboBoxRaces = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -143,7 +152,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 33);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 26);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -153,7 +162,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 26);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
@@ -162,7 +171,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 26);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -171,13 +180,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 26);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -192,7 +201,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -200,7 +209,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 26);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -209,13 +218,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 26);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonSave
             // 
@@ -223,7 +232,7 @@
             this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(34, 26);
             this.toolStripButtonSave.Text = "Сохранить";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
@@ -248,7 +257,8 @@
             this.toolStripMenuItem7,
             this.editFormToolStripMenuItem,
             this.filterToolStripMenuItem,
-            this.statisticsToolStripMenuItem});
+            this.statisticsToolStripMenuItem,
+            this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -523,11 +533,92 @@
             this.racesNumberToolStripMenuItem.Text = "Races number";
             this.racesNumberToolStripMenuItem.Click += new System.EventHandler(this.racesNumberToolStripMenuItem_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.passForHeapToolStripMenuItem,
+            this.racesResultsToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // passForHeapToolStripMenuItem
+            // 
+            this.passForHeapToolStripMenuItem.Name = "passForHeapToolStripMenuItem";
+            this.passForHeapToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.passForHeapToolStripMenuItem.Text = "Pass for heap";
+            this.passForHeapToolStripMenuItem.Click += new System.EventHandler(this.passForHeapToolStripMenuItem_Click);
+            // 
+            // racesResultsToolStripMenuItem
+            // 
+            this.racesResultsToolStripMenuItem.Name = "racesResultsToolStripMenuItem";
+            this.racesResultsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.racesResultsToolStripMenuItem.Text = "Races results";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(934, 461);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.Visible = false;
+            // 
+            // SearchtextBox
+            // 
+            this.SearchtextBox.Location = new System.Drawing.Point(799, 157);
+            this.SearchtextBox.Name = "SearchtextBox";
+            this.SearchtextBox.Size = new System.Drawing.Size(134, 26);
+            this.SearchtextBox.TabIndex = 5;
+            this.SearchtextBox.Visible = false;
+            // 
+            // comboBoxDrivers
+            // 
+            this.comboBoxDrivers.FormattingEnabled = true;
+            this.comboBoxDrivers.Items.AddRange(new object[] {
+            "Lastname",
+            "Country"});
+            this.comboBoxDrivers.Location = new System.Drawing.Point(799, 110);
+            this.comboBoxDrivers.Name = "comboBoxDrivers";
+            this.comboBoxDrivers.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxDrivers.TabIndex = 6;
+            this.comboBoxDrivers.Visible = false;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(799, 202);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(103, 32);
+            this.buttonSearch.TabIndex = 7;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Visible = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // comboBoxRaces
+            // 
+            this.comboBoxRaces.FormattingEnabled = true;
+            this.comboBoxRaces.Items.AddRange(new object[] {
+            "Race_Name",
+            "Class_Name"});
+            this.comboBoxRaces.Location = new System.Drawing.Point(812, 110);
+            this.comboBoxRaces.Name = "comboBoxRaces";
+            this.comboBoxRaces.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxRaces.TabIndex = 8;
+            this.comboBoxRaces.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 557);
+            this.Controls.Add(this.comboBoxRaces);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.comboBoxDrivers);
+            this.Controls.Add(this.SearchtextBox);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bindingNavigator1);
@@ -553,6 +644,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,6 +706,14 @@
         private System.Windows.Forms.ToolStripMenuItem averageRideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ridesForDriversToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem racesNumberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passForHeapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem racesResultsToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox SearchtextBox;
+        private System.Windows.Forms.ComboBox comboBoxDrivers;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.ComboBox comboBoxRaces;
     }
 }
 

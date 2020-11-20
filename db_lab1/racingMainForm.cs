@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Word = Microsoft.Office.Interop.Word;
 
 namespace Lab2BD1
 {
@@ -23,7 +17,7 @@ namespace Lab2BD1
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Validate();
-           // this.driverBindingSource.EndEdit();
+            // this.driverBindingSource.EndEdit();
             startsTableAdapter.Update(kursWorkDataSet);
             roadsTableAdapter.Update(kursWorkDataSet);
             racesTableAdapter.Update(kursWorkDataSet);
@@ -51,7 +45,7 @@ namespace Lab2BD1
             // TODO: This line of code loads data into the 'kursWorkDataSet.Autos' table. You can move, or remove it, as needed.
             this.autosTableAdapter.Fill(this.kursWorkDataSet.Autos);
             // TODO: This line of code loads data into the 'racingDataSet.Road' table. You can move, or remove it, as needed.
-          
+
 
             dataGridView1.AutoGenerateColumns = true;
 
@@ -60,68 +54,111 @@ namespace Lab2BD1
         private void toolStripMenuItemDrivers_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = false;
+
+            comboBoxDrivers.Visible = true;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = true;
+            buttonSearch.Visible = true;
+
             bindingNavigator1.BindingSource = driversBindingSource;
             dataGridView1.DataSource = driversBindingSource;
             labelName.Text = "Drivers";
         }
-
         private void toolStripMenuItemRoads_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = false;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = roadsBindingSource;
             dataGridView1.DataSource = roadsBindingSource;
             labelName.Text = "Roads";
         }
-
         private void toolStripMenuItemHeaps_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = heapsBindingSource;
             dataGridView1.DataSource = heapsBindingSource;
             labelName.Text = "Heaps";
         }
-
         private void roadBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = roadsBindingSource;
             dataGridView1.DataSource = roadsBindingSource;
             labelName.Text = "Roads";
         }
-
         private void autosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = autosBindingSource;
             dataGridView1.DataSource = autosBindingSource;
             labelName.Text = "Autos";
         }
-
         private void classesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = classesBindingSource;
             dataGridView1.DataSource = classesBindingSource;
             labelName.Text = "Classes";
         }
-
         private void racesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = true;
+            SearchtextBox.Visible = true;
+            buttonSearch.Visible = true;
+
             bindingNavigator1.BindingSource = racesBindingSource;
             dataGridView1.DataSource = racesBindingSource;
             labelName.Text = "Races";
         }
-
         private void startsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editFormToolStripMenuItem.Visible = true;
+
+            comboBoxDrivers.Visible = false;
+            comboBoxRaces.Visible = false;
+            SearchtextBox.Visible = false;
+            buttonSearch.Visible = false;
+
             bindingNavigator1.BindingSource = startsBindingSource;
             dataGridView1.DataSource = startsBindingSource;
             labelName.Text = "Starts";
         }
-    
-    private void toolStripMenuItemChangingHeap_Click(object sender, EventArgs e)
+
+
+
+        private void toolStripMenuItemChangingHeap_Click(object sender, EventArgs e)
         {
             var rs = new HeapForm();
             //var rs = new Form2();
@@ -170,7 +207,6 @@ namespace Lab2BD1
             heapsTableAdapter.Fill(kursWorkDataSet.Heaps);
             kursWorkDataSet.AcceptChanges();
         }
-
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 1)
@@ -197,8 +233,6 @@ namespace Lab2BD1
             heapsTableAdapter.Fill(kursWorkDataSet.Heaps);
             kursWorkDataSet.AcceptChanges();
         }
-
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 1)
@@ -218,6 +252,7 @@ namespace Lab2BD1
                 kursWorkDataSet.AcceptChanges();
             }
         }
+
 
         public static int age_from = 0;
         public static int age_to = 0;
@@ -251,6 +286,8 @@ namespace Lab2BD1
             }
         }
 
+
+        // statistic
         public static int class_id = 0;
         private void numberOfHeapsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -274,13 +311,12 @@ namespace Lab2BD1
             }
             return;
         }
-
         private void averageRideToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
 
-                MessageBox.Show("The average ride time is  " 
+                MessageBox.Show("The average ride time is  "
                     + startsTableAdapter.AverageRideTime()
                     + " sec", "Average ride time" + class_id,
                     MessageBoxButtons.OK);
@@ -295,9 +331,9 @@ namespace Lab2BD1
         const string ConnectionString = "Data Source=ARTEMSNOTEBOOK;Initial Catalog=KursWork;Integrated Security=True";
         private void ridesForDriversToolStripMenuItem_Click(object sender, EventArgs e)
         {
-      
+
             try
-                {
+            {
 
                 SqlConnection sqlconn = new SqlConnection(ConnectionString);
                 sqlconn.Open();
@@ -312,12 +348,12 @@ namespace Lab2BD1
                 dataGridView1.DataSource = dt;
                 sqlconn.Close();
             }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(@"Error: " + ex.Message);
-                }
-                return;
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+            return;
+
         }
 
         public static string month;
@@ -338,6 +374,138 @@ namespace Lab2BD1
                 MessageBox.Show(@"Error: " + ex.Message);
             }
             return;
+        }
+
+        //Reports
+        private void ReplaceWord(string stubReplace, string text, Word.Document wordDocument)
+        {
+            var range = wordDocument.Content;
+            range.Find.ClearFormatting();
+            range.Find.Execute(FindText: stubReplace, ReplaceWith: text);
+        }
+
+        private static string passForHeapPath = System.AppDomain.CurrentDomain.BaseDirectory + @"\passForHeap.docx";
+        private void passForHeapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            Word.Application wordApp = new Word.Application();
+            wordApp.Visible = true;
+
+            Word.Document document = wordApp.Documents.OpenNoRepairDialog(passForHeapPath);
+            document.Activate();
+
+            try
+            {
+                SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                sqlconn.Open();
+                SqlDataAdapter oda = new SqlDataAdapter(
+                    @"SELECT Drivers.[Driver_ID]
+      ,Drivers.[Name]
+      ,[Lastname]
+      ,[MiddleName]
+      ,[DOB]
+      ,[Country]
+      ,[Telefon]
+      ,[Mail]
+	  ,Starts.Start_number
+	  ,Heaps.Heap_ID
+	  ,Races.[Name] as Race_name 
+	  ,Races.Date_held
+  FROM [KursWork].[dbo].[Drivers]
+  Inner join [KursWork].[dbo].Starts on Drivers.[Driver_ID] = Starts.[Driver_ID]
+  Inner join [KursWork].[dbo].Heaps on Heaps.[heap_ID] = starts.[Heap_ID]
+   Inner join [KursWork].[dbo].Races on Races.[Race_ID] = Heaps.[Race_ID]", sqlconn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                dataGridView2.DataSource = dt;
+                sqlconn.Close();
+
+                Word.Table table = document.Tables[1];
+                Object oMissing = System.Reflection.Missing.Value;
+                int sum = 0;
+                for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+                {
+                    document.Tables[1].Rows.Add(ref oMissing);
+                    sum += Convert.ToInt32(dataGridView2.Rows[i].Cells[1].Value);
+                    table.Cell(i + 2, 1).Range.Text = Convert.ToString(dataGridView2.Rows[i].Cells[0].Value);
+                    table.Cell(i + 2, 2).Range.Text = Convert.ToString(dataGridView2.Rows[i].Cells[1].Value);
+                }
+                ReplaceWord("{sum}", Convert.ToString(sum), document);
+                document.SaveAs(passForHeapPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(@"Error: " + ex.Message);
+            }
+            wordApp.Visible = false;
+
+
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            
+           
+            if (labelName.Text == "Drivers")
+
+            {
+                string value = Convert.ToString(comboBoxDrivers.SelectedItem);
+                if (value == "Lastname")
+                {
+                    try
+                    {
+                        string text = "%" + SearchtextBox.Text + "%";
+                        dataGridView1.DataSource = driversTableAdapter.GetDataBySearchLastName(text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(@"Error: " + ex.Message);
+                    }
+                }
+                if (value == "Country")
+                {
+                    try
+                    {
+                        string text = "%" + SearchtextBox.Text + "%";
+                        dataGridView1.DataSource = driversTableAdapter.GetDataByCountry(text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(@"Error: " + ex.Message);
+                    }
+                }
+            }
+
+            if (labelName.Text == "Races")
+            {
+                string value = Convert.ToString(comboBoxRaces.SelectedItem);
+                if (value == "Race_Name")
+                {
+                    
+                    try
+                    {
+                        string text = "%" + SearchtextBox.Text + "%";
+                        dataGridView1.DataSource = racesTableAdapter.GetDataByName(text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(@"Error: " + ex.Message);
+                    }
+                }
+                if (value == "Class_Name")
+                {
+                    try
+                    {
+                        string text = "%" + SearchtextBox.Text + "%";
+                        dataGridView1.DataSource = racesTableAdapter.GetDataByClassName(text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(@"Error: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

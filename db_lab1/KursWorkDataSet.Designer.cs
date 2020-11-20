@@ -5002,7 +5002,7 @@ SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail FROM D
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail FROM db" +
@@ -5010,19 +5010,31 @@ SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail FROM D
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT  drivers.Name, drivers.Lastname, Count(DISTINCT heaps.race_id) AS number_of_races
+            this._commandCollection[1].CommandText = "SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail\r\nFROM  " +
+                " Drivers\r\nWHERE Country like @search";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@search", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT  drivers.Name, drivers.Lastname, Count(DISTINCT heaps.race_id) AS number_of_races
 FROM dbo.Drivers
 inner join starts on starts.driver_id = drivers.driver_id
 inner join heaps on starts.heap_id = heaps.heap_id
 Group by drivers.driver_id, drivers.Name, drivers.Lastname";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail \r\nFROM " +
-                "dbo.Drivers\r\nWHERE DATEDIFF(hour,DOB,GETDATE())/8766 BETWEEN @age1  AND @age2";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@age1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@age2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail FROM db" +
+                "o.Drivers\r\nWhere lastname like @search";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@search", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT Driver_ID, Name, Lastname, MiddleName, DOB, Country, Telefon, Mail \r\nFROM " +
+                "dbo.Drivers\r\nWHERE DATEDIFF(hour,DOB,GETDATE())/8766 BETWEEN @age1  AND @age2";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@age1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@age2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5053,8 +5065,44 @@ Group by drivers.driver_id, drivers.Name, drivers.Lastname";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByNumberOfRacesForDriver(KursWorkDataSet.DriversDataTable dataTable) {
+        public virtual int FillBycountry(KursWorkDataSet.DriversDataTable dataTable, string search) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KursWorkDataSet.DriversDataTable GetDataByCountry(string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            KursWorkDataSet.DriversDataTable dataTable = new KursWorkDataSet.DriversDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNumberOfRacesForDriver(KursWorkDataSet.DriversDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -5067,7 +5115,43 @@ Group by drivers.driver_id, drivers.Name, drivers.Lastname";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual KursWorkDataSet.DriversDataTable GetDataByNumberOfRacesForDriver() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            KursWorkDataSet.DriversDataTable dataTable = new KursWorkDataSet.DriversDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySearchLastnme(KursWorkDataSet.DriversDataTable dataTable, string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KursWorkDataSet.DriversDataTable GetDataBySearchLastName(string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
             KursWorkDataSet.DriversDataTable dataTable = new KursWorkDataSet.DriversDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5078,7 +5162,7 @@ Group by drivers.driver_id, drivers.Name, drivers.Lastname";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FilterByAge(KursWorkDataSet.DriversDataTable dataTable, decimal age1, decimal age2) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(age1));
             this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(age2));
             if ((this.ClearBeforeFill == true)) {
@@ -5093,7 +5177,7 @@ Group by drivers.driver_id, drivers.Name, drivers.Lastname";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual KursWorkDataSet.DriversDataTable GetDataBy(decimal age1, decimal age2) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(age1));
             this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(age2));
             KursWorkDataSet.DriversDataTable dataTable = new KursWorkDataSet.DriversDataTable();
@@ -5941,16 +6025,28 @@ SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM Races WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM dbo.Races";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT COUNT(*) FROM Races\r\n   WHERE MONTH(Date_held) =@happened_at ";
+            this._commandCollection[1].CommandText = "SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM dbo.Races\r\nw" +
+                "here class_id = (select class_id from dbo.Classes where name like @search)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@happened_at", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@search", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM dbo.Races\r\nW" +
+                "here name like @search";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@search", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT COUNT(*) FROM Races\r\n   WHERE MONTH(Date_held) =@happened_at ";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@happened_at", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5972,6 +6068,78 @@ SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM Races WHERE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual KursWorkDataSet.RacesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            KursWorkDataSet.RacesDataTable dataTable = new KursWorkDataSet.RacesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCLassName(KursWorkDataSet.RacesDataTable dataTable, string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KursWorkDataSet.RacesDataTable GetDataByClassName(string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((search == null)) {
+                throw new global::System.ArgumentNullException("search");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            KursWorkDataSet.RacesDataTable dataTable = new KursWorkDataSet.RacesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByName(KursWorkDataSet.RacesDataTable dataTable, string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((search == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KursWorkDataSet.RacesDataTable GetDataByName(string search) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((search == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(search));
+            }
             KursWorkDataSet.RacesDataTable dataTable = new KursWorkDataSet.RacesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6129,7 +6297,7 @@ SELECT Race_ID, Name, Date_held, Class_ID, Road_ID, Laps_number FROM Races WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object RacesInMonth(decimal happened_at) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((decimal)(happened_at));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
