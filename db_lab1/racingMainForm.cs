@@ -225,9 +225,8 @@ namespace Lab2BD1
 
             var edt = new EditForm(
             Convert.ToInt32(row[0]),
-            Convert.ToInt32(row[2]),
-            Convert.ToInt32(row[3]),
-            Convert.ToDateTime(row[1])
+            Convert.ToInt32(row[1]),
+            Convert.ToString(row[2])
             );
             edt.ShowDialog();
             heapsTableAdapter.Fill(kursWorkDataSet.Heaps);

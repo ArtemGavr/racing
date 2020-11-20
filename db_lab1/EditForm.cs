@@ -28,29 +28,33 @@ namespace Lab2BD1
         public EditForm()
         {
             InitializeComponent();
-            roadTableAdapter.Fill(racingDataSet.Road);
-            driverTableAdapter.Fill(racingDataSet.Driver);
+            racesTableAdapter.Fill(kursWorkDataSet.Races);
+            heapsTableAdapter.Fill(kursWorkDataSet.Heaps);
             edit = false;
 
         }
 
-        public EditForm(int id, int driver_id, int road_id, DateTime startDate)
+        public EditForm(int id, int race_id, string type)
  : this()
         {
-            roadTableAdapter.Fill(racingDataSet.Road);
-            driverTableAdapter.Fill(racingDataSet.Driver);
+            racesTableAdapter.Fill(kursWorkDataSet.Races);
+            heapsTableAdapter.Fill(kursWorkDataSet.Heaps);
             edit = true;
             this.id = id;
-            dateTimePicker1.Value = startDate;
-            comboBox_rooad.SelectedValue = road_id;
-            comboBox_Driver.SelectedValue =driver_id;
+            
+            comboBox_race.SelectedValue = race_id;
+            comboBox_type.SelectedValue =type;
         }
 
 
         private void EditForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'kursWorkDataSet.Races' table. You can move, or remove it, as needed.
+           
+            // TODO: This line of code loads data into the 'kursWorkDataSet.Heaps' table. You can move, or remove it, as needed.
+            
             // TODO: This line of code loads data into the 'racingDataSet.Heap' table. You can move, or remove it, as needed.
-            this.heapTableAdapter.Fill(this.racingDataSet.Heap);
+
           
 
         }
@@ -62,11 +66,11 @@ namespace Lab2BD1
                 //int i = Convert.ToInt32(comboBox_rooad.SelectedValue);
                 //object b = comboBox_Driver.SelectedValue;
                 //int j = Convert.ToInt32(b);
-                heapTableAdapter.UpdateQueryHeap(dateTimePicker1.Value, Convert.ToInt32(comboBox_Driver.SelectedValue), Convert.ToInt32(comboBox_rooad.SelectedValue), id);
+                heapsTableAdapter.UpdateQuery(Convert.ToInt32(comboBox_race.SelectedValue), Convert.ToString(comboBox_type.SelectedValue), id);
             }
             else
             {
-                heapTableAdapter.Insert(dateTimePicker1.Value, Convert.ToInt32(comboBox_Driver.SelectedValue), Convert.ToInt32(comboBox_rooad.SelectedValue));
+                heapsTableAdapter.InsertQuery(Convert.ToInt32(comboBox_race.SelectedValue), Convert.ToString(comboBox_type.SelectedValue));
             }
             Close();
         }
@@ -74,15 +78,6 @@ namespace Lab2BD1
         {
             Close();
         }
-
-        private void comboBox_rooad_ValueMemberChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBox_rooad_SelectedValueChanged(object sender, EventArgs e)
-        {
-        }
-
         private void comboBox_rooad_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
