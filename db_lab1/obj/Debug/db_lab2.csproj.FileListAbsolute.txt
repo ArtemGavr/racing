@@ -28,8 +28,13 @@ C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Lab2BD1.exe.config
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Lab2BD1.exe
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Lab2BD1.pdb
-C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.EditForm.resources
-C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Form2.resources
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Filtration_Drivers.resources
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.ClassType.resources
 C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Month.resources
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\RdlCompile.cache
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\RdlCompile.compiled
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\db_lab2.csproj.CopyComplete
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.Filtration_Autos.resources
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.EditHeapForm.resources
+C:\Users\Xiaomi\OneDrive - Kharkov National University of Radioelectronics\!БД\Лабы\lb2\db_lab1\obj\Debug\Lab2BD1.EditStarts.resources

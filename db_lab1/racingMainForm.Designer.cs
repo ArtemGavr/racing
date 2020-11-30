@@ -57,29 +57,11 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemChangingHeap = new System.Windows.Forms.ToolStripMenuItem();
             this.qUeryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editHeapFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelName = new System.Windows.Forms.Label();
-            this.autosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.heapsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.startsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kursWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kursWorkDataSet = new Lab2BD1.KursWorkDataSet();
-            this.autosTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.AutosTableAdapter();
-            this.classesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.ClassesTableAdapter();
-            this.driversTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.DriversTableAdapter();
-            this.heapsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.HeapsTableAdapter();
-            this.racesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RacesTableAdapter();
-            this.roadsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RoadsTableAdapter();
-            this.startsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.StartsTableAdapter();
-            this.tableAdapterManager = new Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numberOfHeapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.averageRideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,25 +70,61 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passForHeapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.racesResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.automationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ascNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ascDateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.descDateToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.numberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ascNumberToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.descNumberToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelName = new System.Windows.Forms.Label();
+            this.autosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursWorkDataSet = new Lab2BD1.KursWorkDataSet();
+            this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.heapsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roadsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.startsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.SearchtextBox = new System.Windows.Forms.TextBox();
             this.comboBoxDrivers = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.comboBoxRaces = new System.Windows.Forms.ComboBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.autosTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.AutosTableAdapter();
+            this.classesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.ClassesTableAdapter();
+            this.driversTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.DriversTableAdapter();
+            this.heapsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.HeapsTableAdapter();
+            this.racesTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RacesTableAdapter();
+            this.roadsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.RoadsTableAdapter();
+            this.startsTableAdapter = new Lab2BD1.KursWorkDataSetTableAdapters.StartsTableAdapter();
+            this.tableAdapterManager = new Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager();
+            this.editStartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStartsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateStartsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteStartsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heapsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -136,7 +154,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(388, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(388, 38);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -146,7 +164,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 26);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
@@ -255,14 +273,17 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem3,
             this.toolStripMenuItem7,
-            this.editFormToolStripMenuItem,
+            this.editHeapFormToolStripMenuItem,
             this.filterToolStripMenuItem,
             this.statisticsToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.automationToolStripMenuItem,
+            this.sortToolStripMenuItem,
+            this.editStartsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(965, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 36);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -276,9 +297,10 @@
             this.classesToolStripMenuItem,
             this.racesToolStripMenuItem,
             this.startsToolStripMenuItem,
+            this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(102, 29);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(102, 32);
             this.toolStripMenuItem3.Text = "Database";
             // 
             // toolStripMenuItemDrivers
@@ -360,37 +382,194 @@
             this.qUeryToolStripMenuItem.Text = "QueryEdit";
             this.qUeryToolStripMenuItem.Click += new System.EventHandler(this.qUeryToolStripMenuItem_Click);
             // 
-            // editFormToolStripMenuItem
+            // editHeapFormToolStripMenuItem
             // 
-            this.editFormToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editHeapFormToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.updateToolStripMenuItem,
             this.deleteToolStripMenuItem});
-            this.editFormToolStripMenuItem.Name = "editFormToolStripMenuItem";
-            this.editFormToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.editFormToolStripMenuItem.Text = "EditForm";
-            this.editFormToolStripMenuItem.Visible = false;
+            this.editHeapFormToolStripMenuItem.Name = "editHeapFormToolStripMenuItem";
+            this.editHeapFormToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
+            this.editHeapFormToolStripMenuItem.Text = "Edit Heap";
+            this.editHeapFormToolStripMenuItem.Visible = false;
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(66, 29);
+            this.filterToolStripMenuItem.Text = "Filter";
+            this.filterToolStripMenuItem.Visible = false;
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
+            // 
+            // statisticsToolStripMenuItem
+            // 
+            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.numberOfHeapsToolStripMenuItem,
+            this.averageRideToolStripMenuItem,
+            this.ridesForDriversToolStripMenuItem,
+            this.racesNumberToolStripMenuItem});
+            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
+            this.statisticsToolStripMenuItem.Text = "Statistics";
+            // 
+            // numberOfHeapsToolStripMenuItem
+            // 
+            this.numberOfHeapsToolStripMenuItem.Name = "numberOfHeapsToolStripMenuItem";
+            this.numberOfHeapsToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.numberOfHeapsToolStripMenuItem.Text = "Number of heaps";
+            this.numberOfHeapsToolStripMenuItem.Click += new System.EventHandler(this.numberOfHeapsToolStripMenuItem_Click);
+            // 
+            // averageRideToolStripMenuItem
+            // 
+            this.averageRideToolStripMenuItem.Name = "averageRideToolStripMenuItem";
+            this.averageRideToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.averageRideToolStripMenuItem.Text = "Average ride";
+            this.averageRideToolStripMenuItem.Click += new System.EventHandler(this.averageRideToolStripMenuItem_Click);
+            // 
+            // ridesForDriversToolStripMenuItem
+            // 
+            this.ridesForDriversToolStripMenuItem.Name = "ridesForDriversToolStripMenuItem";
+            this.ridesForDriversToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.ridesForDriversToolStripMenuItem.Text = "Rides for drivers";
+            this.ridesForDriversToolStripMenuItem.Click += new System.EventHandler(this.ridesForDriversToolStripMenuItem_Click);
+            // 
+            // racesNumberToolStripMenuItem
+            // 
+            this.racesNumberToolStripMenuItem.Name = "racesNumberToolStripMenuItem";
+            this.racesNumberToolStripMenuItem.Size = new System.Drawing.Size(253, 34);
+            this.racesNumberToolStripMenuItem.Text = "Races number";
+            this.racesNumberToolStripMenuItem.Click += new System.EventHandler(this.racesNumberToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.passForHeapToolStripMenuItem,
+            this.racesResultsToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // passForHeapToolStripMenuItem
+            // 
+            this.passForHeapToolStripMenuItem.Name = "passForHeapToolStripMenuItem";
+            this.passForHeapToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.passForHeapToolStripMenuItem.Text = "Pass for heap";
+            this.passForHeapToolStripMenuItem.Click += new System.EventHandler(this.passForHeapToolStripMenuItem_Click);
+            // 
+            // racesResultsToolStripMenuItem
+            // 
+            this.racesResultsToolStripMenuItem.Name = "racesResultsToolStripMenuItem";
+            this.racesResultsToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.racesResultsToolStripMenuItem.Text = "Races results";
+            this.racesResultsToolStripMenuItem.Click += new System.EventHandler(this.racesResultsToolStripMenuItem_Click);
+            // 
+            // automationToolStripMenuItem
+            // 
+            this.automationToolStripMenuItem.Name = "automationToolStripMenuItem";
+            this.automationToolStripMenuItem.Size = new System.Drawing.Size(123, 29);
+            this.automationToolStripMenuItem.Text = "Automation";
+            this.automationToolStripMenuItem.Click += new System.EventHandler(this.automationToolStripMenuItem_Click);
+            // 
+            // sortToolStripMenuItem
+            // 
+            this.sortToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nameToolStripMenuItem,
+            this.dateToolStripMenuItem,
+            this.numberToolStripMenuItem});
+            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
+            this.sortToolStripMenuItem.Text = "Sort by...";
+            this.sortToolStripMenuItem.Visible = false;
+            // 
+            // nameToolStripMenuItem
+            // 
+            this.nameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ascNameToolStripMenuItem,
+            this.descNameToolStripMenuItem});
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.nameToolStripMenuItem.Text = "Name";
+            // 
+            // ascNameToolStripMenuItem
+            // 
+            this.ascNameToolStripMenuItem.Name = "ascNameToolStripMenuItem";
+            this.ascNameToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ascNameToolStripMenuItem.Text = "Asc";
+            this.ascNameToolStripMenuItem.Click += new System.EventHandler(this.ascNameToolStripMenuItem_Click);
+            // 
+            // descNameToolStripMenuItem
+            // 
+            this.descNameToolStripMenuItem.Name = "descNameToolStripMenuItem";
+            this.descNameToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.descNameToolStripMenuItem.Text = "Desc";
+            this.descNameToolStripMenuItem.Click += new System.EventHandler(this.descNameToolStripMenuItem_Click);
+            // 
+            // dateToolStripMenuItem
+            // 
+            this.dateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ascDateToolStripMenuItem2,
+            this.descDateToolStripMenuItem2});
+            this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dateToolStripMenuItem.Text = "Date";
+            // 
+            // ascDateToolStripMenuItem2
+            // 
+            this.ascDateToolStripMenuItem2.Name = "ascDateToolStripMenuItem2";
+            this.ascDateToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.ascDateToolStripMenuItem2.Text = "Asc";
+            this.ascDateToolStripMenuItem2.Click += new System.EventHandler(this.ascDateToolStripMenuItem2_Click);
+            // 
+            // descDateToolStripMenuItem2
+            // 
+            this.descDateToolStripMenuItem2.Name = "descDateToolStripMenuItem2";
+            this.descDateToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.descDateToolStripMenuItem2.Text = "Desc";
+            this.descDateToolStripMenuItem2.Click += new System.EventHandler(this.descDateToolStripMenuItem2_Click);
+            // 
+            // numberToolStripMenuItem
+            // 
+            this.numberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ascNumberToolStripMenuItem1,
+            this.descNumberToolStripMenuItem1});
+            this.numberToolStripMenuItem.Name = "numberToolStripMenuItem";
+            this.numberToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.numberToolStripMenuItem.Text = "Number";
+            // 
+            // ascNumberToolStripMenuItem1
+            // 
+            this.ascNumberToolStripMenuItem1.Name = "ascNumberToolStripMenuItem1";
+            this.ascNumberToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.ascNumberToolStripMenuItem1.Text = "Asc";
+            this.ascNumberToolStripMenuItem1.Click += new System.EventHandler(this.ascNumberToolStripMenuItem1_Click);
+            // 
+            // descNumberToolStripMenuItem1
+            // 
+            this.descNumberToolStripMenuItem1.Name = "descNumberToolStripMenuItem1";
+            this.descNumberToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.descNumberToolStripMenuItem1.Text = "Desc";
+            this.descNumberToolStripMenuItem1.Click += new System.EventHandler(this.descNumberToolStripMenuItem1_Click);
             // 
             // labelName
             // 
@@ -406,6 +585,16 @@
             // 
             this.autosBindingSource.DataMember = "Autos";
             this.autosBindingSource.DataSource = this.kursWorkBindingSource;
+            // 
+            // kursWorkBindingSource
+            // 
+            this.kursWorkBindingSource.DataSource = this.kursWorkDataSet;
+            this.kursWorkBindingSource.Position = 0;
+            // 
+            // kursWorkDataSet
+            // 
+            this.kursWorkDataSet.DataSetName = "KursWorkDataSet";
+            this.kursWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // classesBindingSource
             // 
@@ -436,124 +625,6 @@
             // 
             this.startsBindingSource.DataMember = "Starts";
             this.startsBindingSource.DataSource = this.kursWorkBindingSource;
-            // 
-            // filterToolStripMenuItem
-            // 
-            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            this.filterToolStripMenuItem.Size = new System.Drawing.Size(66, 29);
-            this.filterToolStripMenuItem.Text = "Filter";
-            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
-            // 
-            // kursWorkBindingSource
-            // 
-            this.kursWorkBindingSource.DataSource = this.kursWorkDataSet;
-            this.kursWorkBindingSource.Position = 0;
-            // 
-            // kursWorkDataSet
-            // 
-            this.kursWorkDataSet.DataSetName = "KursWorkDataSet";
-            this.kursWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // autosTableAdapter
-            // 
-            this.autosTableAdapter.ClearBeforeFill = true;
-            // 
-            // classesTableAdapter
-            // 
-            this.classesTableAdapter.ClearBeforeFill = true;
-            // 
-            // driversTableAdapter
-            // 
-            this.driversTableAdapter.ClearBeforeFill = true;
-            // 
-            // heapsTableAdapter
-            // 
-            this.heapsTableAdapter.ClearBeforeFill = true;
-            // 
-            // racesTableAdapter
-            // 
-            this.racesTableAdapter.ClearBeforeFill = true;
-            // 
-            // roadsTableAdapter
-            // 
-            this.roadsTableAdapter.ClearBeforeFill = true;
-            // 
-            // startsTableAdapter
-            // 
-            this.startsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AutosTableAdapter = this.autosTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClassesTableAdapter = this.classesTableAdapter;
-            this.tableAdapterManager.DriversTableAdapter = this.driversTableAdapter;
-            this.tableAdapterManager.HeapsTableAdapter = this.heapsTableAdapter;
-            this.tableAdapterManager.RacesTableAdapter = this.racesTableAdapter;
-            this.tableAdapterManager.RoadsTableAdapter = this.roadsTableAdapter;
-            this.tableAdapterManager.StartsTableAdapter = this.startsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // statisticsToolStripMenuItem
-            // 
-            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.numberOfHeapsToolStripMenuItem,
-            this.averageRideToolStripMenuItem,
-            this.ridesForDriversToolStripMenuItem,
-            this.racesNumberToolStripMenuItem});
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
-            // 
-            // numberOfHeapsToolStripMenuItem
-            // 
-            this.numberOfHeapsToolStripMenuItem.Name = "numberOfHeapsToolStripMenuItem";
-            this.numberOfHeapsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.numberOfHeapsToolStripMenuItem.Text = "Number of heaps";
-            this.numberOfHeapsToolStripMenuItem.Click += new System.EventHandler(this.numberOfHeapsToolStripMenuItem_Click);
-            // 
-            // averageRideToolStripMenuItem
-            // 
-            this.averageRideToolStripMenuItem.Name = "averageRideToolStripMenuItem";
-            this.averageRideToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.averageRideToolStripMenuItem.Text = "Average ride";
-            this.averageRideToolStripMenuItem.Click += new System.EventHandler(this.averageRideToolStripMenuItem_Click);
-            // 
-            // ridesForDriversToolStripMenuItem
-            // 
-            this.ridesForDriversToolStripMenuItem.Name = "ridesForDriversToolStripMenuItem";
-            this.ridesForDriversToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.ridesForDriversToolStripMenuItem.Text = "Rides for drivers";
-            this.ridesForDriversToolStripMenuItem.Click += new System.EventHandler(this.ridesForDriversToolStripMenuItem_Click);
-            // 
-            // racesNumberToolStripMenuItem
-            // 
-            this.racesNumberToolStripMenuItem.Name = "racesNumberToolStripMenuItem";
-            this.racesNumberToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.racesNumberToolStripMenuItem.Text = "Races number";
-            this.racesNumberToolStripMenuItem.Click += new System.EventHandler(this.racesNumberToolStripMenuItem_Click);
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.passForHeapToolStripMenuItem,
-            this.racesResultsToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // passForHeapToolStripMenuItem
-            // 
-            this.passForHeapToolStripMenuItem.Name = "passForHeapToolStripMenuItem";
-            this.passForHeapToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.passForHeapToolStripMenuItem.Text = "Pass for heap";
-            this.passForHeapToolStripMenuItem.Click += new System.EventHandler(this.passForHeapToolStripMenuItem_Click);
-            // 
-            // racesResultsToolStripMenuItem
-            // 
-            this.racesResultsToolStripMenuItem.Name = "racesResultsToolStripMenuItem";
-            this.racesResultsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.racesResultsToolStripMenuItem.Text = "Races results";
             // 
             // dataGridView2
             // 
@@ -609,11 +680,102 @@
             this.comboBoxRaces.TabIndex = 8;
             this.comboBoxRaces.Visible = false;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(942, 411);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(22, 10);
+            this.dataGridView3.TabIndex = 9;
+            this.dataGridView3.Visible = false;
+            // 
+            // autosTableAdapter
+            // 
+            this.autosTableAdapter.ClearBeforeFill = true;
+            // 
+            // classesTableAdapter
+            // 
+            this.classesTableAdapter.ClearBeforeFill = true;
+            // 
+            // driversTableAdapter
+            // 
+            this.driversTableAdapter.ClearBeforeFill = true;
+            // 
+            // heapsTableAdapter
+            // 
+            this.heapsTableAdapter.ClearBeforeFill = true;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
+            // 
+            // roadsTableAdapter
+            // 
+            this.roadsTableAdapter.ClearBeforeFill = true;
+            // 
+            // startsTableAdapter
+            // 
+            this.startsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AutosTableAdapter = this.autosTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClassesTableAdapter = this.classesTableAdapter;
+            this.tableAdapterManager.DriversTableAdapter = this.driversTableAdapter;
+            this.tableAdapterManager.HeapsTableAdapter = this.heapsTableAdapter;
+            this.tableAdapterManager.RacesTableAdapter = this.racesTableAdapter;
+            this.tableAdapterManager.RoadsTableAdapter = this.roadsTableAdapter;
+            this.tableAdapterManager.StartsTableAdapter = this.startsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Lab2BD1.KursWorkDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // editStartsToolStripMenuItem
+            // 
+            this.editStartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStartsToolStripMenuItem1,
+            this.updateStartsToolStripMenuItem1,
+            this.deleteStartsToolStripMenuItem1});
+            this.editStartsToolStripMenuItem.Name = "editStartsToolStripMenuItem";
+            this.editStartsToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
+            this.editStartsToolStripMenuItem.Text = "Edit";
+            this.editStartsToolStripMenuItem.Visible = false;
+            // 
+            // addStartsToolStripMenuItem1
+            // 
+            this.addStartsToolStripMenuItem1.Name = "addStartsToolStripMenuItem1";
+            this.addStartsToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.addStartsToolStripMenuItem1.Text = "Add";
+            this.addStartsToolStripMenuItem1.Click += new System.EventHandler(this.addStartsToolStripMenuItem1_Click);
+            // 
+            // updateStartsToolStripMenuItem1
+            // 
+            this.updateStartsToolStripMenuItem1.Name = "updateStartsToolStripMenuItem1";
+            this.updateStartsToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.updateStartsToolStripMenuItem1.Text = "Update";
+            this.updateStartsToolStripMenuItem1.Click += new System.EventHandler(this.updateStartsToolStripMenuItem1_Click);
+            // 
+            // deleteStartsToolStripMenuItem1
+            // 
+            this.deleteStartsToolStripMenuItem1.Name = "deleteStartsToolStripMenuItem1";
+            this.deleteStartsToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.deleteStartsToolStripMenuItem1.Text = "Delete";
+            this.deleteStartsToolStripMenuItem1.Click += new System.EventHandler(this.deleteStartsToolStripMenuItem1_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.saveToolStripMenuItem.Text = "s";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 557);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.comboBoxRaces);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.comboBoxDrivers);
@@ -636,15 +798,16 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heapsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roadsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursWorkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,7 +838,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripMenuItem qUeryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editHeapFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -714,6 +877,23 @@
         private System.Windows.Forms.ComboBox comboBoxDrivers;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.ComboBox comboBoxRaces;
+        private System.Windows.Forms.ToolStripMenuItem automationToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ToolStripMenuItem sortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ascNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem descNameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ascDateToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem descDateToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem numberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ascNumberToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem descNumberToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editStartsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStartsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem updateStartsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteStartsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 

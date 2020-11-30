@@ -52,8 +52,12 @@
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,11 +75,17 @@
     <Compile Include="ClassType.Designer.cs">
       <DependentUpon>ClassType.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditForm.cs">
+    <Compile Include="EditHeapForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditForm.Designer.cs">
-      <DependentUpon>EditForm.cs</DependentUpon>
+    <Compile Include="EditHeapForm.Designer.cs">
+      <DependentUpon>EditHeapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditStarts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStarts.Designer.cs">
+      <DependentUpon>EditStarts.cs</DependentUpon>
     </Compile>
     <Compile Include="Filtration_Autos.cs">
       <SubType>Form</SubType>
@@ -94,6 +104,9 @@
     </Compile>
     <Compile Include="HeapForm.Designer.cs">
       <DependentUpon>HeapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KursWorkDataSet.cs">
+      <DependentUpon>KursWorkDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="KursWorkDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -129,11 +142,20 @@
       <DependentUpon>RacingDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="ReportHeaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportHeaps.Designer.cs">
+      <DependentUpon>ReportHeaps.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClassType.resx">
       <DependentUpon>ClassType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditForm.resx">
-      <DependentUpon>EditForm.cs</DependentUpon>
+    <EmbeddedResource Include="EditHeapForm.resx">
+      <DependentUpon>EditHeapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStarts.resx">
+      <DependentUpon>EditStarts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filtration_Autos.resx">
       <DependentUpon>Filtration_Autos.cs</DependentUpon>
@@ -162,6 +184,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportRaces.rdlc" />
     <None Include="KursWorkDataSet.xsc">
       <DependentUpon>KursWorkDataSet.xsd</DependentUpon>
     </None>

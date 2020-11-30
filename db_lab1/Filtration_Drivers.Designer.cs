@@ -43,9 +43,9 @@
             this.label5.Location = new System.Drawing.Point(36, 109);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 31);
+            this.label5.Size = new System.Drawing.Size(230, 31);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Range FROM";
+            this.label5.Text = "Age Range FROM";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // filter_fn1
@@ -95,6 +95,7 @@
             this.button2.TabIndex = 25;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Filtration_Drivers
             // 

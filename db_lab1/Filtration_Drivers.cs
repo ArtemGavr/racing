@@ -35,5 +35,10 @@ namespace Lab2BD1
             Form1.age_from = Convert.ToInt32(filter_st1.Text);
             Form1.age_to = Convert.ToInt32(filter_fn1.Text);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
